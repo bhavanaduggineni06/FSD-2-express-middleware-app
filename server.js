@@ -62,7 +62,7 @@ app.use((err,req,res,next)=> {
     const message=err.message || "Internal Server Error";
     res.status(status).send(message);
 });
-const PORT=6001;
+const PORT=process.env.PORT || 6001;
 app.listen(PORT , ()=> {
     console.log(`Server running at http://localhost:${PORT}/api/v1/patients`);
 });
