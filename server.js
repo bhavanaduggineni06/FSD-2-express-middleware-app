@@ -3,6 +3,9 @@ import cors from 'cors';
 import morgan from 'morgan';
 import fs from 'fs';
 const app=express();
+app.get('/', (req,res) => {
+    res.send("Express Middleware App is Running");
+});
 app.use(cors());
 app.use(morgan('dev'));
 const logger=(req,res,next)=> {
